@@ -1,5 +1,4 @@
-# SHELTER :dog:
-## Server
+## Server :electric_plug:
 
 ```
 SHELTER
