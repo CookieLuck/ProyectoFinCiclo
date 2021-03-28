@@ -1,0 +1,11 @@
+<commands>
+
+    <command name="Help" usage="/help">
+        <description>returns all the available commands</description>
+    </command>
+
+    <command name="Get free memory" usage="/getFreeMemory">
+        <description>returns free memory available</description>
+    </command>
+
+</commands>

@@ -18,8 +18,8 @@ SHELTER
     │       workspace.xml
     │
     └───src
-            Main.java
-            Protocol.java
+            core.ServerCore.java
+            core.Protocol.java
 ```
 
 This is the server for the shelter app.
@@ -42,7 +42,7 @@ We need to keep certain reliability that the packages will come, but don't let t
 ## How to run it
 To run the server, first you have to compile the project.
 
-then just execute the Main.class file using the command
+then just execute the core.ServerCore.class file using the command
 ```sh
-Java Main
+Java core.ServerCore
 ```
