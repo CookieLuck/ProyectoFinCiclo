@@ -1,4 +1,4 @@
-# SHELTER
+# SHELTER :dog:
 ## Server
 
 ```
