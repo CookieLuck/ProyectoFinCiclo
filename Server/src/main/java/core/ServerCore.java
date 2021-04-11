@@ -3,8 +3,9 @@ package core;
 import threads.ServerInput;
 
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class ServerCore {
 
@@ -14,47 +15,62 @@ public class ServerCore {
         instance = Runtime.getRuntime();
     }
 
-
     public static void main(String[] args) {
         ServerCore serverCore = new ServerCore();
         serverCore.start();
     }
 
     public void start(){
+
+
+
         int mb = 1024 * 1024;
 
         System.out.println("Server starting...\nTotal Memory: " + instance.totalMemory() / mb+"Mb");
         ServerSocket serverSocket;
+
+        ServerInput serverInput = new ServerInput(this);
+        serverInput.setDaemon(true);
+        serverInput.start();
+
         try {
 
-            serverSocket = new ServerSocket(8036);
-            ServerInput serverInput = new ServerInput(this);
-            serverInput.setDaemon(true);
-            serverInput.start();
+            DatagramSocket socketUDP = new DatagramSocket(8893);
+            byte[] bufer = new byte[1000];
 
-        } catch (IOException e) {
+            while (true) {
+                // Construimos el DatagramPacket para recibir peticiones
+                DatagramPacket peticion =
+                        new DatagramPacket(bufer, bufer.length);
 
-            System.out.println("Could not start server... ¿Is the port free?");
-            e.printStackTrace();
-            return;
+                // Leemos una petición del DatagramSocket
+                System.out.println("waiting for petition");
+                socketUDP.receive(peticion);
 
-        }
+                System.out.print("Datagrama recibido del host: " +
+                        peticion.getAddress());
+                System.out.println(" desde el puerto remoto: " +
+                        peticion.getPort());
 
+                // Construimos el DatagramPacket para enviar la respuesta
+                DatagramPacket respuesta =
+                        new DatagramPacket("hola bb".getBytes(StandardCharsets.UTF_8), "hola bb".length(),
+                                peticion.getAddress(), peticion.getPort());
 
-
-        System.out.println("Server started.");
-
-        while(true){
-
-            try {
-                Socket s = serverSocket.accept();
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                // Enviamos la respuesta, que es un eco
+                socketUDP.send(respuesta);
             }
 
+        } catch (SocketException e) {
+            System.out.println("Socket: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO: " + e.getMessage());
         }
+
+
+
+        //System.out.println("Server started.");
+
     }
 
     public long getMemoryLeft(){
