@@ -39,11 +39,9 @@ public class ServerCore {
             byte[] bufer = new byte[1000];
 
             while (true) {
-                // Construimos el DatagramPacket para recibir peticiones
                 DatagramPacket peticion =
                         new DatagramPacket(bufer, bufer.length);
 
-                // Leemos una petición del DatagramSocket
                 System.out.println("waiting for petition");
                 socketUDP.receive(peticion);
 
@@ -52,12 +50,10 @@ public class ServerCore {
                 System.out.println(" desde el puerto remoto: " +
                         peticion.getPort());
 
-                // Construimos el DatagramPacket para enviar la respuesta
                 DatagramPacket respuesta =
-                        new DatagramPacket("hola bb".getBytes(StandardCharsets.UTF_8), "hola bb".length(),
+                        new DatagramPacket("test".getBytes(StandardCharsets.UTF_8), "test".length(),
                                 peticion.getAddress(), peticion.getPort());
 
-                // Enviamos la respuesta, que es un eco
                 socketUDP.send(respuesta);
             }
 
