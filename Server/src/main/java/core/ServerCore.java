@@ -45,8 +45,11 @@ public class ServerCore {
                 System.out.println("waiting for petition");
                 socketUDP.receive(peticion);
 
-                System.out.print("Datagrama recibido del host: " +
+                System.out.println("Datagrama recibido del host: " +
                         peticion.getAddress());
+
+
+                System.out.println((new String(bufer)).trim());
                 System.out.println(" desde el puerto remoto: " +
                         peticion.getPort());
 
