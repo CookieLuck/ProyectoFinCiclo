@@ -3,6 +3,8 @@ package cookieTrace.forms.login;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
@@ -12,6 +14,12 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     NetConectorLogin net;
+
+    @FXML
+    TextField email;
+
+    @FXML
+    PasswordField psswrd;
 
     @FXML
     Pane loading;
@@ -27,9 +35,18 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void sendRequest() throws InterruptedException {
+    public void sendRequest(){
         loading.setVisible(true);
-        net.sendLogin("TEST");
+        Conectioncloser cc = new Conectioncloser(net.socket);
+
+        new Thread(new Runnable() {
+
+            public void run() {
+                    net.sendLogin(email.getText()+" "+psswrd.getText(), cc);
+            }
+        }).start();
+
+        cc.start();
     }
 
     public void notLoading(){
@@ -46,6 +63,5 @@ public class LoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         loading.setVisible(false);
         net = new NetConectorLogin(this);
-        net.start();
     }
 }

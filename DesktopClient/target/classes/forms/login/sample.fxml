@@ -11,35 +11,35 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookieTrace.forms.login.LoginController">
    <children>
-      <Button layoutY="370.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="49.0" prefWidth="283.0" style="-fx-background-color: #28b5b5; -fx-background-radius: 0px; -fx-text-fill: #eeebdd; -fx-font-size: 20px;" text="Login">
+      <Button layoutY="370.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="49.0" prefWidth="283.0" style="-fx-background-radius: 0px; -fx-text-fill: #eeebdd; -fx-font-size: 20px;" stylesheets="@style.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
       <TextField fx:id="email" layoutX="39.0" layoutY="203.0" prefHeight="35.0" prefWidth="206.0" promptText="E-mail" style="-fx-background-color: #4b778d; -fx-border-color: #ffffff; -fx-border-radius: 3px;" />
+      <Text fx:id="errorText" fill="#ffb8b8" layoutX="39.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text layoutX="39.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #28b5b5;" text="Forgot password? ">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Text>
       <Text layoutX="102.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-fill: #8fd9a8;" text="SHELTER" wrappingWidth="80.13146958872676" />
-      <PasswordField fx:id="email" layoutX="39.0" layoutY="250.0" prefHeight="35.0" prefWidth="206.0" promptText="Password" style="-fx-background-color: #4b778d; -fx-border-color: #ffffff; -fx-border-radius: 3px;" />
+      <PasswordField fx:id="psswrd" layoutX="39.0" layoutY="250.0" prefHeight="35.0" prefWidth="206.0" promptText="Password" style="-fx-background-color: #4b778d; -fx-border-color: #ffffff; -fx-border-radius: 3px;" />
       <ImageView fx:id="image" fitHeight="95.0" fitWidth="110.0" layoutX="91.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image.png" />
          </image>
       </ImageView>
-      <Text fx:id="errorText" fill="#ffb8b8" layoutX="39.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tryhrtyhrt" />
-      <Pane fx:id="loading" layoutX="-110.0" layoutY="-45.0" prefHeight="531.0" prefWidth="504.0">
+      <Pane fx:id="loading" layoutX="-8.0" layoutY="-9.0" prefHeight="438.0" prefWidth="300.0">
          <children>
             <ImageView fitHeight="468.0" fitWidth="644.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../target/classes/images/black.jpg" />
+                  <Image url="@black.jpg" />
                </image>
             </ImageView>
-            <ProgressIndicator layoutX="197.0" layoutY="209.0" prefHeight="95.0" prefWidth="110.0" />
+            <ProgressIndicator layoutX="95.0" layoutY="172.0" prefHeight="95.0" prefWidth="110.0" />
          </children></Pane>
    </children>
 </AnchorPane>
