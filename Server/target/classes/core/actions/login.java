@@ -15,30 +15,30 @@ import java.net.DatagramSocket;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class login {
-    public static void login(DatagramSocket sock, Client sc, Protocol petition){
+public class Login {
+    public static void doAction(DatagramSocket sock, Client sc, Protocol petition){
 
         try {
             Protocol response = new Protocol();
 
             Session sessionOne = HibernateUtils.getSession();
-            Query query = sessionOne.createQuery("FROM ProtectoraEntity where nombre=:nombre AND contrasenia=:pass")
+            Query query = sessionOne.createQuery("FROM ProtectoraEntity where correo=:nombre AND contrasenia=:pass")
             .setParameter("nombre",petition.getArgs().get("user")).setParameter("pass",petition.getArgs().get("pass"));
 
             List<ProtectoraEntity> protectoras = query.getResultList();
 
             if(protectoras.size()<=0){
                 response.setHEADER(404);
-                response.setBody("Credenciales invalidos");
+                response.setBody("Username or password incorrect");
                 DatagramPacket respuesta =
-                        new DatagramPacket(response.toString().getBytes("UTF8"), response.toString().getBytes("UTF8").length,
+                        new DatagramPacket(response.toString().getBytes(StandardCharsets.UTF_8), response.toString().getBytes(StandardCharsets.UTF_8).length,
                                 sc.getAddress(), sc.getPort());
                 sock.send(respuesta);
             }else{
                 response.setHEADER(200);
                 response.setBody("HOLA!");
                 DatagramPacket respuesta =
-                        new DatagramPacket(response.toString().getBytes("UTF8"), response.toString().getBytes("UTF8").length,
+                        new DatagramPacket(response.toString().getBytes(StandardCharsets.UTF_8), response.toString().getBytes(StandardCharsets.UTF_8).length,
                                 sc.getAddress(), sc.getPort());
                 sock.send(respuesta);
             }
