@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Protocol {
@@ -14,6 +15,21 @@ public class Protocol {
     Map<String, String> args;
     String token;
 
+    public Protocol(int Header,String body,String action, String token, String... args){
+        this.args = new HashMap<String,String>();
+        String anterior="";
+        String actual="";
+        for(int i = 0; i<args.length;i++){
+            anterior = actual;
+            actual = args[i];
+            if(i%2!=0)
+                this.args.put(anterior,actual);
+        }
+        this.HEADER = Header;
+        this.body = body;
+        this.action = action;
+        this.token = token;
+    }
     public Protocol(String xml){
         Gson gson = new Gson();
         Protocol prol = gson.fromJson(xml,Protocol.class);

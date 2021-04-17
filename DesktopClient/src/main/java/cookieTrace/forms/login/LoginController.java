@@ -1,5 +1,8 @@
 package cookieTrace.forms.login;
 
+import cookieTrace.netConector.NetConector;
+import cookieTrace.netConector.NetProcess;
+import cookieTrace.protocol.Protocol;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,11 +17,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.DatagramSocket;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    NetConectorLogin net;
+    NetConector net;
 
     @FXML
     TextField email;
@@ -43,20 +48,13 @@ public class LoginController implements Initializable {
     public void sendRequest(){
         loading.setVisible(true);
 
+        Class controllerClass = this.getClass();
+        Object controller = this;
+        
+        Protocol prol = new Protocol(0,null,"Login",null,
+                "user",email.getText(),"pass",psswrd.getText());
 
-        new Thread(new Runnable() {
-
-            public void run() {
-                if(!email.getText().equals("") && !psswrd.getText().equals(""))
-                    net.sendLogin(email.getText(),psswrd.getText());
-                else
-                    errormsg("Please enter an E-mail and a password");
-            }
-        }).start();
-
-    }
-    public void invocarMetodoClass(Method m){
-
+        NetProcess np = new NetProcess(this,net,prol,"errormsg","errormsg","errormsg");
     }
     @FXML
     public void sendRequestKey(KeyEvent event){
@@ -71,15 +69,21 @@ public class LoginController implements Initializable {
         loading.setVisible(false);
     }
 
-    public void errormsg(String msg){
+    public void errormsg(Protocol prol){
         loading.setVisible(false);
-        errorText.setText(msg);
+        errorText.setText(prol.getBody());
+
+    }
+    public void errormsg(){
+        loading.setVisible(false);
+        errorText.setText("Time out");
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loading.setVisible(false);
-        net = new NetConectorLogin(this);
+        net = new NetConector();
+        //net = new NetConectorLogin(this);
     }
 }

@@ -68,7 +68,7 @@ public class ServerCore {
 
                     Class<?> c = Class.forName("core.actions."+prol.getAction());
                     Class<?>[] paramTypes = {DatagramSocket.class, Client.class, Protocol.class};
-                    Method method = c.getDeclaredMethod("doAction");
+                    Method method = c.getDeclaredMethod("doAction",paramTypes);
                     Client client = new Client(peticion.getAddress(),peticion.getPort());
                     MethodExecutor me = new MethodExecutor(client,socketUDP,prol,method);
                     me.start();

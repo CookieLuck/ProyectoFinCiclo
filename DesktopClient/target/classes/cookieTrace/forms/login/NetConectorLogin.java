@@ -29,52 +29,52 @@ public class NetConectorLogin{
     }
 
 
-    public void sendLogin(String usuario,String constrasenia) {
+    /*public void sendLogin(String usuario,String constrasenia) {
         this.sendLogin = true;
 
-            try {
-                if (usuario.getBytes().length+constrasenia.getBytes().length >= 1000) {
-                    loginController.errormsg("ERROR");
-                }
-                    ip = InetAddress.getByName("localHost");
+        try {
+            if (usuario.getBytes().length+constrasenia.getBytes().length >= 1000) {
 
-                Protocol pro = new Protocol();
-                Map<String,String> args = new HashMap<String,String>();
-                args.put("user",usuario);
-                args.put("pass",constrasenia);
-                pro.setHEADER(0);
-                pro.setAction("Login");
-                pro.setArgs(args);
-
-                byte[] tosend = pro.toString().getBytes(StandardCharsets.UTF_8);
-                System.out.println(new String(tosend));
-                    DatagramPacket mensajeSalida =
-                            new DatagramPacket(tosend, tosend.length, ip, 8893);
-                    socket.send(mensajeSalida);
-
-                    byte[] bufer = new byte[1000];
-                    String linea;
-
-                    DatagramPacket mensajeEntrada =
-                            new DatagramPacket(bufer, bufer.length);
-                        socket.receive(mensajeEntrada);
-                    linea = new String(bufer, StandardCharsets.UTF_8).trim();
-                System.out.println(linea);
-                    Protocol prol = new Protocol(linea);
-
-
-                    System.out.println(prol.toString());
-                    loginController.errormsg(prol.getBody());
-                    sendLogin = false;
-
-            } catch (SocketTimeoutException e) {
-                loginController.errormsg("Oops... Something went wrong (Err 504) ");
-                return;
-            } catch (IOException e) {
-                System.out.println("IO:" + e.getMessage());
             }
+            ip = InetAddress.getByName("localHost");
 
+            Protocol pro = new Protocol();
+            Map<String,String> args = new HashMap<String,String>();
+            args.put("user",usuario);
+            args.put("pass",constrasenia);
+            pro.setHEADER(0);
+            pro.setAction("Login");
+            pro.setArgs(args);
+
+            byte[] tosend = pro.toString().getBytes(StandardCharsets.UTF_8);
+            System.out.println(new String(tosend));
+            DatagramPacket mensajeSalida =
+                    new DatagramPacket(tosend, tosend.length, ip, 8893);
+            socket.send(mensajeSalida);
+
+            byte[] bufer = new byte[1000];
+            String linea;
+
+            DatagramPacket mensajeEntrada =
+                    new DatagramPacket(bufer, bufer.length);
+            socket.receive(mensajeEntrada);
+            linea = new String(bufer, StandardCharsets.UTF_8).trim();
+            System.out.println(linea);
+            Protocol prol = new Protocol(linea);
+
+
+            System.out.println(prol.toString());
+            loginController.errormsg(prol.getBody());
+            sendLogin = false;
+
+        } catch (SocketTimeoutException e) {
+            loginController.errormsg("Oops... Something went wrong (Err 504) ");
+            return;
+        } catch (IOException e) {
+            System.out.println("IO:" + e.getMessage());
         }
+
+    }*/
 
 
 }
