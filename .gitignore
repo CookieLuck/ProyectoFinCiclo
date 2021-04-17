@@ -1,1 +1,5 @@
 /Server/out/
+/Server/target/
+/DesktopClient/out/
+/DesktopClient/target/
+.class
