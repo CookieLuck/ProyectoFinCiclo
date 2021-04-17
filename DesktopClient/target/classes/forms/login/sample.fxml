@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookieTrace.forms.login.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#sendRequestKey" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookieTrace.forms.login.LoginController">
    <children>
       <Button layoutY="370.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="49.0" prefWidth="283.0" style="-fx-background-radius: 0px; -fx-text-fill: #eeebdd; -fx-font-size: 20px;" stylesheets="@style.css" text="Login">
          <cursor>
