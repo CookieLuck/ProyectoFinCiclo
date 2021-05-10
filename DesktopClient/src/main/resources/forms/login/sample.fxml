@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ProgressIndicator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#sendRequestKey" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookieTrace.forms.login.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#sendRequestKey" prefHeight="419.0" prefWidth="283.0" style="-fx-background-color: #4b778d;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookieTrace.forms.login.LoginController">
    <children>
       <Button layoutY="370.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="49.0" prefWidth="283.0" style="-fx-background-radius: 0px; -fx-text-fill: #eeebdd; -fx-font-size: 20px;" stylesheets="@style.css" text="Login">
          <cursor>
@@ -39,7 +35,10 @@
                   <Image url="@black.jpg" />
                </image>
             </ImageView>
-            <ProgressIndicator layoutX="95.0" layoutY="172.0" prefHeight="95.0" prefWidth="110.0" />
+            <ProgressIndicator layoutX="95.0" layoutY="172.0" prefHeight="95.0" prefWidth="110.0">
+               <padding>
+                  <Insets right="-50.0" />
+               </padding></ProgressIndicator>
          </children></Pane>
    </children>
 </AnchorPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0e49a178-aa27-4d40-82a7-7a7e209a2c42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_base_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_controls_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_controls_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_fxml_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_media_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_media_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_web_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/Maven__org_openjfx_javafx_web_win_12_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/HTML/perro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/Model/AnimalEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/Model/EspecieEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/Model/ProtectoraEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/Model/RazaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/forms/mainMenu/MainMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/forms/mainMenu/MainMenuMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/netConector/LazyImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/HTML/MainScreen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/HTML/animalList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/HTML/fondo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/HTML/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/HTML/registrarAnimal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/forms/mainMenu/form.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/forms/mainMenu/menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__io_github_x_stream_mxparser_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/ClientThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/EditAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/GetAnimalProfilePhoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/GetAnimales.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/GetEspecies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/GetRazasByEspecie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/UploadAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/UploadAnimalProfilePhoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/model/AnimalEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/model/EspecieEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/core/model/RazaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/session/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/animals/photos/195/profile/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/animals/photos/196/profile/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/animals/photos/197/profile/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html parser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/DesktopClient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/DesktopClient.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/out/artifacts/DesktopClient_jar/DesktopClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/out/artifacts/DesktopClient_jar/DesktopClient.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/ActualMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/ActualMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/forms/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/forms/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/forms/login/NetConectorLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/netConector/NetConector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/netConector/NetConector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/protocol/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/src/main/java/cookieTrace/protocol/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/src/main/resources/forms/login/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/src/main/resources/forms/login/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/ActualMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/ActualMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/forms/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/forms/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/forms/login/NetConectorLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/protocol/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/target/classes/cookieTrace/protocol/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesktopClient/target/classes/forms/login/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DesktopClient/target/classes/forms/login/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/25e9eac0-9344-4233-be09-84c0878856cf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/25e9eac0-9344-4233-be09-84c0878856cf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/25e9eac0-9344-4233-be09-84c0878856cf/storage_v2/_src_/database/shelter.5bymeg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/25e9eac0-9344-4233-be09-84c0878856cf/storage_v2/_src_/database/shelter.5bymeg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/CommandHelp" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/CommandHelp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/MethodExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/MethodExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/ServerCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/ServerCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/actions/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/actions/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/core/model/ProtectoraEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/core/model/ProtectoraEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/threads/ServerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/threads/ServerInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/utils/HibernateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/utils/HibernateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/MethodExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/MethodExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/ServerCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/ServerCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/actions/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/actions/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/core/model/ProtectoraEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/core/model/ProtectoraEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/threads/ServerInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/threads/ServerInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/utils/HibernateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/utils/HibernateUtils.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1s801JABFqNXbeOdTmyBB2cMUEy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e49a178-aa27-4d40-82a7-7a7e209a2c42" name="Default Changelist" comment="" />
+      <created>1620238695687</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620238695687</updated>
+      <workItem from="1620238697652" duration="1490000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

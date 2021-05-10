@@ -26,12 +26,10 @@
         root
     </property>
 
-    <!-- List of XML mapping files -->
-    <mapping class="core.model.ProtectoraEntity"/>
-        <!-- <property name="connection.username"/> -->
-        <!-- <property name="connection.password"/> -->
-
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+        <mapping class="core.model.ProtectoraEntity"/>
+        <mapping class="core.model.EspecieEntity"/>
+        <mapping class="core.model.RazaEntity"/>
+        <mapping class="core.model.AnimalEntity"/>
+        <mapping class="core.model.UsuarioEntity"/>
     </session-factory>
 </hibernate-configuration>

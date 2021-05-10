@@ -6,6 +6,18 @@
 
     <command name="Get free memory" usage="/getFreeMemory">
         <description>returns free memory available</description>
+   </command>
+
+    <command name="Stop" usage="/Stop">
+        <description>Stops the server safely</description>
+    </command>
+
+    <command name="Pause" usage="/Pause">
+            <description>Pauses the servers, it wont answer any petitions</description>
+    </command>
+
+    <command name="Resume" usage="/Resume">
+        <description>If paused, resumes the server function</description>
     </command>
 
 </commands>

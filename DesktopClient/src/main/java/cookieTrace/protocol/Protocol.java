@@ -1,6 +1,7 @@
 package cookieTrace.protocol;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
 import java.lang.reflect.Field;
@@ -10,12 +11,11 @@ import java.util.Map;
 public class Protocol {
 
     int HEADER;
-    String body;
+    Object body;
     String action;
     Map<String, String> args;
-    String token;
 
-    public Protocol(int Header,String body,String action, String token, String... args){
+    public Protocol(int Header,Object body,String action,  String... args){
         this.args = new HashMap<String,String>();
         String anterior="";
         String actual="";
@@ -28,10 +28,10 @@ public class Protocol {
         this.HEADER = Header;
         this.body = body;
         this.action = action;
-        this.token = token;
     }
     public Protocol(String xml){
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setDateFormat("MM dd, yyyy HH:mm:ss").create();
+
         Protocol prol = gson.fromJson(xml,Protocol.class);
         for (Field field : prol.getClass().getDeclaredFields()) {
             field.setAccessible(true);
@@ -53,7 +53,7 @@ public class Protocol {
         return HEADER;
     }
 
-    public String getBody() {
+    public Object getBody() {
         return body;
     }
 
@@ -81,16 +81,8 @@ public class Protocol {
         this.args = args;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
     public String toString(){
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setDateFormat("MM dd, yyyy HH:mm:ss").create();
         return gson.toJson(this);
     }
 }

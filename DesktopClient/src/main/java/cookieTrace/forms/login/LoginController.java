@@ -1,8 +1,11 @@
 package cookieTrace.forms.login;
 
+import cookieTrace.ActualMain;
+import cookieTrace.forms.mainMenu.MainMenuMain;
 import cookieTrace.netConector.NetConector;
 import cookieTrace.netConector.NetProcess;
 import cookieTrace.protocol.Protocol;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,13 +15,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.DatagramSocket;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -48,14 +47,14 @@ public class LoginController implements Initializable {
     public void sendRequest(){
         loading.setVisible(true);
 
-        Class controllerClass = this.getClass();
-        Object controller = this;
-        
-        Protocol prol = new Protocol(0,null,"Login",null,
+        Protocol prol = new Protocol(0,null,"Login",
                 "user",email.getText(),"pass",psswrd.getText());
 
-        NetProcess np = new NetProcess(this,net,prol,"errormsg","errormsg","errormsg");
+        NetProcess np = new NetProcess(this,net,prol,"successLogin","errormsg","timeoutmsg");
+
+
     }
+
     @FXML
     public void sendRequestKey(KeyEvent event){
 
@@ -71,19 +70,45 @@ public class LoginController implements Initializable {
 
     public void errormsg(Protocol prol){
         loading.setVisible(false);
-        errorText.setText(prol.getBody());
-
+        errorText.setText((String) prol.getBody());
     }
-    public void errormsg(){
+
+    public void successLogin(Protocol prol){
+        MainMenuMain main = new MainMenuMain();
+        LoginController controller = this;
+        try {
+
+            Platform.runLater(new Runnable(){
+
+                @Override
+                public void run() {
+                    try {
+                        main.start(controller);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void close(){
+        Stage stage = (Stage) errorText.getScene().getWindow();
+        // do what you have to do
+        stage.close();
+    }
+    public void timeoutmsg(){
         loading.setVisible(false);
-        errorText.setText("Time out");
+        errorText.setText("Cloud not connect to server. Try again later");
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loading.setVisible(false);
-        net = new NetConector();
-        //net = new NetConectorLogin(this);
+        ActualMain.net = new NetConector();
+        net = ActualMain.net;
     }
 }

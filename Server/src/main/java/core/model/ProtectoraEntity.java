@@ -6,24 +6,13 @@ import java.util.Objects;
 @Entity
 @Table(name = "protectora", schema = "public", catalog = "shelter")
 public class ProtectoraEntity {
-    @Id
-    private long id;
     private String nombre;
     private String contrasenia;
     private String direccion;
     private String descripcion;
+
+    @Id
     private String correo;
-
-    @Basic
-    @Column(name = "id")
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     @Basic
     @Column(name = "nombre")
     public String getNombre() {
@@ -79,11 +68,11 @@ public class ProtectoraEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProtectoraEntity that = (ProtectoraEntity) o;
-        return id == that.id && Objects.equals(nombre, that.nombre) && Objects.equals(contrasenia, that.contrasenia) && Objects.equals(direccion, that.direccion) && Objects.equals(descripcion, that.descripcion) && Objects.equals(correo, that.correo);
+        return correo == that.correo && Objects.equals(nombre, that.nombre) && Objects.equals(contrasenia, that.contrasenia) && Objects.equals(direccion, that.direccion) && Objects.equals(descripcion, that.descripcion) && Objects.equals(correo, that.correo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, contrasenia, direccion, descripcion, correo);
+        return Objects.hash(nombre, contrasenia, direccion, descripcion, correo);
     }
 }

@@ -3,29 +3,84 @@ package cookieTrace.netConector;
 import cookieTrace.forms.login.LoginController;
 import cookieTrace.protocol.Protocol;
 
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class NetConector {
 
     private InetAddress ip;
-    public DatagramSocket socket;
+    public Socket socket;
 
     public NetConector(){
         try {
-            socket = new DatagramSocket();
-            socket.setSoTimeout(2000);
+            socket = new Socket("LocalHost",8893);
         } catch (SocketException e) {
+            e.printStackTrace();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void sendPackage(Object controller,Protocol prol, String methodOkay, String methodNotOkay, String timeOut) {
+    public InetAddress getIp() {
+        return ip;
+    }
+
+    public void setIp(InetAddress ip) {
+        this.ip = ip;
+    }
+
+    public Socket getSocket() {
+        return socket;
+    }
+
+    public void setSocket(Socket socket) {
+        this.socket = socket;
+    }
+
+
+    public Protocol sendSimple(Protocol prol){
+        PrintWriter output = null;
+        BufferedReader input = null;
+        try {
+            output   = new PrintWriter(socket.getOutputStream(), true);
+            input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        output.println(prol.toString());
+        output.flush();
+
+
+
+        try {
+            String linea = input.readLine();
+            System.out.println(linea);
+            return new Protocol(linea);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new Protocol(400,"","");
+    }
+
+    public void sendPackage(Object controller, Protocol prol, String methodOkay, String methodNotOkay, String timeOut) {
+        PrintWriter output = null;
+        BufferedReader input = null;
+        try {
+          output   = new PrintWriter(socket.getOutputStream(), true);
+          input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Method okayMethod = null;
         Method notOkayMethod = null;
         Method timeOutMethod = null;
@@ -40,28 +95,12 @@ public class NetConector {
             e.printStackTrace();
         }
         try {
-            if (prol.toString().getBytes(StandardCharsets.UTF_8).length >= 1000) {
-                Protocol protol = new Protocol();
-                protol.setHEADER(502);
-                protol.setBody("No puedes enviar un packete tan grande");
-                Object[] objects = {protol};
-                notOkayMethod.invoke(clase,objects);
-            }
-            ip = InetAddress.getByName("localHost");
+            System.out.println(prol.toString());
+            output.println(prol.toString());
+            output.flush();
 
-            byte[] tosend = prol.toString().getBytes(StandardCharsets.UTF_8);
-            System.out.println(new String(tosend));
-            DatagramPacket mensajeSalida =
-                    new DatagramPacket(tosend, tosend.length, ip, 8893);
-            socket.send(mensajeSalida);
+            String linea = input.readLine();
 
-            byte[] bufer = new byte[1000];
-            String linea;
-
-            DatagramPacket mensajeEntrada =
-                    new DatagramPacket(bufer, bufer.length);
-            socket.receive(mensajeEntrada);
-            linea = new String(bufer, StandardCharsets.UTF_8).trim();
             System.out.println(linea);
 
             Protocol response = new Protocol(linea);
@@ -83,7 +122,8 @@ public class NetConector {
                 invocationTargetException.printStackTrace();
             }
         } catch (IOException | IllegalAccessException | InvocationTargetException e) {
-            System.out.println("IO:" + e.getMessage());
+            System.out.println("IO:");
+            e.printStackTrace();
         }
 
     }

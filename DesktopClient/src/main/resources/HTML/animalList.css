@@ -1,0 +1,272 @@
+
+.carta {
+    float: left;
+    margin-right: 1em;
+    margin-top: 4em;
+    margin-left: 1em;
+    margin-bottom: 3em;
+    width: 7em;
+    transition-duration: 200ms;
+    height: 7em;
+    cursor: pointer;
+}
+
+img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width:inherit;
+    height: inherit;
+    -webkit-border-radius: 1em 1em 0em 0em;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.carta p {
+    visibility: visible;
+    text-align: center;
+    background-color: #8fd9a8;
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+    margin-top: -3.5em;
+    -webkit-border-radius: 0em 0em 1em 1em;
+    z-index: -1;
+}
+
+.Close {
+    cursor: pointer;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    color: #EEEEEE;
+}
+.Close:hover {
+    color: #4f4f4f;
+}
+.Close:before, .Close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 3vw;
+    width: 2px;
+    background-color: #333;
+}
+.Close:before {
+    transform: rotate(45deg);
+}
+.Close:after {
+    transform: rotate(-45deg);
+}
+
+
+.carta.active .menu{
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e6e6e6;
+    border-radius: 30px;
+    cursor: default;
+}
+
+.carta.active .Photo{
+    margin: 2em;
+}
+
+.carta.active .Photo img{
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background: blue;
+}
+
+.carta.inactive:hover {
+    -webkit-transform: scale(1.1);
+}
+
+
+
+.carta.inactive .grid-container{
+    display: none;
+    overflow: hidden;  /* Hide the element content, while height = 0 */
+    height: 0;
+    opacity: 0;
+    transition: opacity 400ms 0ms;
+}
+
+
+.carta.active .grid-container {
+    overflow: inherit;
+    transition: opacity 600ms 0ms;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 1.4fr 0.6fr;
+    gap: 1px 0px;
+    grid-template-areas:
+    "Photo Name Name Close"
+    "Separator Separator Separator Separator"
+    "description description description description"
+    "Open-calendar Edit Delete Adoptions";
+    opacity: 1;
+}
+.Name { grid-area: Name;
+
+}
+.Photo h6{
+    margin: 16px;
+    text-align: center;
+}
+.Name h1{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Name h6{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Photo { grid-area: Photo; }
+.Close { grid-area: Close; }
+.Edit { grid-area: Edit; }
+.Delete { grid-area: Delete; }
+.Open-calendar { grid-area: Open-calendar; }
+.Adoptions { grid-area: Adoptions; }
+button{
+    margin: 3vw;
+
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.Description { grid-area: description; }
+.Description h5{
+    margin: 4vw;
+    text-align: center;
+}
+.carta.inactive{
+    z-index: -4;
+}
+.clicable{
+    z-index: 3;
+    width: 100%;
+    height: 100%
+}
+
+.Separator {
+    grid-area: Separator;
+    border-bottom: 1px solid #94f1ff;
+    background-color: #a8d6df;
+    height: 1px;
+    margin: 0.5em 0px 1.5em;
+
+}
+
+.carta .effect{
+    visibility: hidden;
+    position: absolute;
+}
+
+
+
+.carta .descripcion p{
+    visibility: hidden;
+    position: absolute;
+
+}
+
+
+.carta .nombre{
+    visibility: visible;
+}
+
+*{
+    margin: 0px;
+}
+
+
+
+
+.carta.inactive:active {
+    -webkit-transform: scale(0.9);
+}
+
+
+.search-box__input {
+    right: 0;
+
+    height: 64px;
+    transition: .5s;
+    position: fixed;
+    width: 0;
+    font-size: 24px;
+    line-height: 64px;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.search-box__input:focus {
+    visibility: visible;
+    width: 30%;
+    padding-left: 16px;
+}
+
+.search-box__label {
+    cursor: pointer;
+    position: fixed;
+    float: right;
+    position: relative;
+    color: #4f4f4f;
+    top: 16px;
+    left: -32px;
+    font-size: 32px;
+}
+.search-box__icon {
+    position: fixed;
+    user-select: none;
+}
+
+.search-box__icon:hover {
+    opacity: .7;
+    transition: .3s;
+}
+
+*{
+    margin: 0px;
+    user-select:none
+}
+

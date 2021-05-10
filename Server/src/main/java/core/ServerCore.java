@@ -21,6 +21,8 @@ public class ServerCore {
     DatagramPacket peticion;
     Runtime instance;
     DatagramSocket socketUDP;
+    public static boolean paused;
+    boolean into;
 
     ServerCore() {
         instance = Runtime.getRuntime();
@@ -32,9 +34,7 @@ public class ServerCore {
     }
 
     public void start() throws Exception {
-
-        HibernateUtils.init();
-        socketUDP = new DatagramSocket(8893);
+        HibernateUtils.getSession();
         int mb = 1024 * 1024;
 
         System.out.println("Server starting...\nTotal Memory: " + instance.totalMemory() / mb + "Mb");
@@ -44,62 +44,13 @@ public class ServerCore {
         serverInput.setDaemon(true);
         serverInput.start();
 
-
-
-
+        ServerSocket ss = new ServerSocket(8893);
         while (true) {
-            try {
-                byte[] bufer = new byte[1000];
-                peticion =
-                        new DatagramPacket(bufer, bufer.length);
 
-                socketUDP.receive(peticion);
-                StringBuilder sb = new StringBuilder();
-
-
-                String peticionString = (new String(bufer, StandardCharsets.UTF_8)).trim();
-                sb.append(new Date()+"\n");
-                sb.append("Received from: [" +
-                        peticion.getAddress() + "] From port: [" +
-                        peticion.getPort() + "]\nMESSAGE:\n"+peticionString+"\n");
-               sb.append("//////////////////////////////////////////////////////");
-                System.out.println(sb.toString());
-                Protocol prol = new Protocol(peticionString);
-
-                    Class<?> c = Class.forName("core.actions."+prol.getAction());
-                    Class<?>[] paramTypes = {DatagramSocket.class, Client.class, Protocol.class};
-                    Method method = c.getDeclaredMethod("doAction",paramTypes);
-                    Client client = new Client(peticion.getAddress(),peticion.getPort());
-                    MethodExecutor me = new MethodExecutor(client,socketUDP,prol,method);
-                    me.start();
-
-            } catch (SocketException e) {
-                System.out.println("Socket: " + e.getMessage());
-            } catch (IOException e) {
-                System.out.println("IO: " + e.getMessage());
-            } catch (ClassNotFoundException e) {
-                Protocol prol = new Protocol();
-                prol.setHEADER(502);
-                prol.setBody("Hubo un error");
-                DatagramPacket respuesta =
-                        new DatagramPacket(prol.toString().getBytes(StandardCharsets.UTF_8), prol.toString().getBytes(StandardCharsets.UTF_8).length,
-                                peticion.getAddress(), peticion.getPort());
-                socketUDP.send(respuesta);
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }catch (NoClassDefFoundError e){
-                Protocol prol = new Protocol();
-                prol.setHEADER(502);
-                prol.setBody("Hubo un error");
-                DatagramPacket respuesta =
-                        new DatagramPacket(prol.toString().getBytes(StandardCharsets.UTF_8), prol.toString().getBytes(StandardCharsets.UTF_8).length,
-                                peticion.getAddress(), peticion.getPort());
-                socketUDP.send(respuesta);
-            }
+            ClientThread ct = new ClientThread(ss.accept());
+            ct.start();
+            //System.out.println("Server started.");
         }
-
-
-        //System.out.println("Server started.");
 
     }
 
